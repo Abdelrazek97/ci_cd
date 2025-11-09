@@ -66,18 +66,7 @@ def deploy(package, deploy_path="deploy"):
     log(f"✅ Deployed to {deploy_path}")
     return dest
 
-# ------------------------
-# 5. Optional: Send Webhook
-# ------------------------
-def send_notification(text="Deployment Completed"):
-    try:
-        # Example: Discord webhook
-        url = "https://your-webhook-url-here"
-        payload = {"content": text}
-        requests.post(url, json=payload)
-        log("✅ Notification sent.")
-    except:
-        log("⚠️ Notification failed (optional).")
+
 
 # ------------------------
 # Main Pipeline
@@ -94,7 +83,6 @@ def pipeline():
     package = package_code()
     deployed_file = deploy(package)
 
-    send_notification("✅ Deployment successful!")
 
     log("🎉 CI/CD Pipeline completed successfully!")
 
