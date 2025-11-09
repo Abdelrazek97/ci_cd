@@ -1,11 +1,9 @@
 
 import subprocess
-import unittest
 import zipfile
 import shutil
 import os
 import datetime
-import requests
 
 # ------------------------
 # Helper: timestamped logs
@@ -86,8 +84,6 @@ def pipeline():
 
     log("🎉 CI/CD Pipeline completed successfully!")
 
-# ------------------------
-# Run
-# ------------------------
+
 if __name__ == "__main__":
     pipeline()
